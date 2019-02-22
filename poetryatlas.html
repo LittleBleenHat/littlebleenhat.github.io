@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1><font size="7"><font face="cambria"><center>WORLD ATLAS OF POETIC TRADITIONS</center></font></font></h1>
+    <div class="topnav">
+      <a class="active" href="poetryatlas.html">Map</a>
+      <a href="about.html">About us</a>
+      <a href="what.html">What is poetry?</a>
+      <a href="devices.html">Poetic devices</a>
+      <a href="langs.html">Languages</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+    <style>
+      .topnav {
+        position: center;
+        background-color: SeaGreen;
+        overflow: hidden;
+      }
+    </style>
+    <style>
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+    </style>
+    <style>
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    </style>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 535px;  /* The height is 535 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+    <h2> </h2>
+  </head>
+  <body>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of English
+  var english = {lat: 51.30, lng: -0.1};
+  var korean = {lat: 37.34, lng: 127};
+  // The map, centered at English
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 3, center: english});
+  // The marker, positioned at English
+  var marker = new google.maps.Marker({
+    position: english,
+    map: map,
+    title: 'English',
+    url: 'eng.html'
+  });
+  marker.addListener('click', function() {
+      if (this.url) {
+          window.open(this.url, '_blank');
+      } else {
+          infowindow.open(map, this);
+      }       
+  });
+  var marker = new google.maps.Marker({
+    position: korean,
+    map: map,
+    title: 'Korean/ÇÑ±¹¾î',
+    url: 'kor.html'
+  });
+  marker.addListener('click', function() {
+      if (this.url) {
+          window.open(this.url, '_blank');
+      } else {
+          infowindow.open(map, this);
+      }
+  });
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhPLLMZ255dHpOiSgqhmqWnNztPi5pNbQ&callback=initMap">
+    </script>
+  </body>
+</html>
