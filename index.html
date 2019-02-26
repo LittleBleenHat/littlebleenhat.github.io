@@ -49,18 +49,18 @@
     <script>
 // Initialize and add the map
 function initMap() {
-  // The location of English
-  var english = {lat: 51.30, lng: -0.1};
+  // The location of SQT
+  var SQT = {lat: 12.42, lng: 53.6};
   var korean = {lat: 37.34, lng: 127};
-  // The map, centered at English
+  // The map, centered at SQT
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 3, center: english});
-  // The marker, positioned at English
+      document.getElementById('map'), {zoom: 3, center: SQT});
+  // The marker, positioned at SQT
   var marker = new google.maps.Marker({
-    position: english,
+    position: SQT,
     map: map,
-    title: 'English',
-    url: 'eng.html'
+    title: 'Soqotri',
+    url: 'sqt.html'
   });
   marker.addListener('click', function() {
       if (this.url) {
