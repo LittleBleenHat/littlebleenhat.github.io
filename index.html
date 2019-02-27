@@ -51,7 +51,7 @@
 function initMap() {
   // The location of SQT
   var SQT = {lat: 12.42, lng: 53.6};
-  var korean = {lat: 37.34, lng: 127};
+  var BRI = {lat: 4.11, lng: 9.25};
   // The map, centered at SQT
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 3, center: SQT});
@@ -70,10 +70,10 @@ function initMap() {
       }       
   });
   var marker = new google.maps.Marker({
-    position: korean,
+    position: BRI,
     map: map,
-    title: 'Korean',
-    url: 'kor.html'
+    title: 'Kbwe',
+    url: 'bri.html'
   });
   marker.addListener('click', function() {
       if (this.url) {
