@@ -8,7 +8,7 @@
       <a href="what.html">What is poetry?</a>
       <a href="meter.html">Poetic meter</a>
       <a href="rhyme.html">Rhyme, alliteration, parallelism</a>
-<a href="other.html">Other devices</a>
+<a href="other.html">Catalogue of devices</a>
       <a href="list.html">List of languages and poems</a>
     </div>
     <style>
@@ -53,6 +53,7 @@ function initMap() {
   var SQT = {lat: 12.42, lng: 53.6};
   var BRI = {lat: 4.11, lng: 9.25};
   var ZMT = {lat: -14.25, lng: 129.55};
+  var BUG = {lat: -4.20, lng: 120.15};
   // The map, centered at SQT
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 3, center: SQT});
@@ -88,6 +89,32 @@ function initMap() {
     map: map,
     title: 'Maringarr',
     url: 'zmt.html'
+  });
+  marker.addListener('click', function() {
+      if (this.url) {
+          window.open(this.url, '_blank');
+      } else {
+          infowindow.open(map, this);
+      }
+  });
+  var marker = new google.maps.Marker({
+    position: ZMT,
+    map: map,
+    title: 'Maringarr',
+    url: 'zmt.html'
+  });
+  marker.addListener('click', function() {
+      if (this.url) {
+          window.open(this.url, '_blank');
+      } else {
+          infowindow.open(map, this);
+      }
+  });
+  var marker = new google.maps.Marker({
+    position: BUG,
+    map: map,
+    title: 'Bugis',
+    url: 'bug.html'
   });
   marker.addListener('click', function() {
       if (this.url) {
