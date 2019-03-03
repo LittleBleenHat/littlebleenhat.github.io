@@ -54,6 +54,7 @@ function initMap() {
   var BRI = {lat: 4.11, lng: 9.25};
   var ZMT = {lat: -14.25, lng: 129.55};
   var BUG = {lat: -4.20, lng: 120.15};
+  var QUC = {lat: 14.9, lng: -90.8};
   // The map, centered at SQT
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 3, center: SQT});
@@ -123,6 +124,19 @@ function initMap() {
           infowindow.open(map, this);
       }
   });
+  var marker = new google.maps.Marker({
+    position: QUC,
+    map: map,
+    title: 'Kiche',
+    url: 'quc.html'
+  });
+  marker.addListener('click', function() {
+      if (this.url) {
+          window.open(this.url, '_blank');
+      } else {
+          infowindow.open(map, this);
+      }
+  });
 }
     </script>
     <!--Load the API from the specified URL
@@ -133,5 +147,6 @@ function initMap() {
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9zoDtLON1kOd9axO7FrcQQ6z9buzKxlA&callback=initMap">
     </script>
+<i><p text align="right"><font size="3"><font face="times new roman">All images from Wikimedia Commons.</font></font></p></i>
   </body>
 </html>
