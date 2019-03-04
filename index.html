@@ -55,6 +55,7 @@ function initMap() {
   var ZMT = {lat: -14.25, lng: 129.55};
   var BUG = {lat: -4.20, lng: 120.15};
   var QUC = {lat: 14.9, lng: -90.8};
+  var XTB = {lat: 41.43, lng: 82.58};
   // The map, centered at SQT
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 3, center: SQT});
@@ -129,6 +130,19 @@ function initMap() {
     map: map,
     title: 'Kiche',
     url: 'quc.html'
+  });
+  marker.addListener('click', function() {
+      if (this.url) {
+          window.open(this.url, '_blank');
+      } else {
+          infowindow.open(map, this);
+      }
+  });
+  var marker = new google.maps.Marker({
+    position: XTB,
+    map: map,
+    title: 'Tocharian',
+    url: 'xtb.html'
   });
   marker.addListener('click', function() {
       if (this.url) {
