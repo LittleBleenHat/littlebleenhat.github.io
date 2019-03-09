@@ -1,180 +1,242 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <h1><font size="7"><font face="cambria"><center>WORLD ATLAS OF POETIC TRADITIONS</center></font></font></h1>
-    <div class="topnav">
-      <a class="active" href="https://littlebleenhat.github.io">Map</a>
-      <a href="about.html">About us</a>
-      <a href="what.html">What is poetry?</a>
-      <a href="meter.html">Poetic meter</a>
-      <a href="rhyme.html">Rhyme, alliteration, parallelism</a>
-<a href="other.html">Catalogue of devices</a>
-      <a href="list.html">List of languages and poems</a>
-    </div>
-    <style>
-      .topnav {
-        position: center;
-        background-color: SeaGreen;
-        overflow: hidden;
-      }
-    </style>
-    <style>
-      .topnav a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-    </style>
-    <style>
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    </style>
-    <style>
-       /* Set the size of the div element that contains the map */
-      #map {
-        height: 535px;  /* The height is 535 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
-    </style>
-    <h2> </h2>
-  </head>
-  <body>
-    <!--The div element for the map -->
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>World Atlas of Poetic Traditions</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/img/site.webmanifest">
+  <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Tinos" rel="stylesheet">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <a href="index.html" style="text-decoration: none; color: black;">
+
+    <h1 style="text-align: center; font-size: 3em; font-family: 'Tinos', Times New Roman, serif;">World
+      Atlas of Poetic
+      Traditions</h1>
+  </a>
+
+  <div class="rc_nav" id="centered_nav">
+    <a href="content/about.html">About us</a>
+    <a href="content/what.html">What is poetry?</a>
+    <a href="content/meter.html">Poetic meter</a>
+    <a href="content/rhyme.html">Rhyme, alliteration, parallelism</a>
+    <a href="content/other.html">Catalogue of devices</a>
+    <a href="content/list.html">List of languages and poems</a>
+    <a href="javascript:void(0);" title="Menu" style="font-size:18px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+  </div>
+
+  <h1></h1>
+
+  <div>
     <div id="map"></div>
     <script>
-// Initialize and add the map
-function initMap() {
-  // The location of SQT
-  var SQT = {lat: 12.42, lng: 53.6};
-  var BRI = {lat: 4.11, lng: 9.25};
-  var ZMT = {lat: -14.25, lng: 129.55};
-  var BUG = {lat: -4.20, lng: 120.15};
-  var QUC = {lat: 14.9, lng: -90.8};
-  var XTB = {lat: 41.43, lng: 82.58};
-  var SSY = {lat: 15.0656, lng: 39.7369};
-  // The map, centered at SQT
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 3, center: SQT});
-  // The marker, positioned at SQT
-  var marker = new google.maps.Marker({
-    position: SQT,
-    map: map,
-    title: 'Soqotri',
-    url: 'sqt.html'
-  });
-  marker.addListener('click', function() {
-      if (this.url) {
-          window.open(this.url, '_blank');
-      } else {
-          infowindow.open(map, this);
-      }       
-  });
-  var marker = new google.maps.Marker({
-    position: BRI,
-    map: map,
-    title: 'Kpwe',
-    url: 'bri.html'
-  });
-  marker.addListener('click', function() {
-      if (this.url) {
-          window.open(this.url, '_blank');
-      } else {
-          infowindow.open(map, this);
+      // Initialize and add the map
+      function initMap() {
+        // The location of SQT
+        var SQT = {
+          lat: 12.42,
+          lng: 53.6
+        };
+        var BRI = {
+          lat: 4.11,
+          lng: 9.25
+        };
+        var ZMT = {
+          lat: -14.25,
+          lng: 129.55
+        };
+        var BUG = {
+          lat: -4.20,
+          lng: 120.15
+        };
+        var QUC = {
+          lat: 14.9,
+          lng: -90.8
+        };
+        var XTB = {
+          lat: 41.43,
+          lng: 82.58
+        };
+        var SSY = {
+          lat: 15.0656,
+          lng: 39.7369
+        };
+        // The map, centered at SQT
+        var map = new google.maps.Map(
+          document.getElementById('map'), {
+            zoom: 3,
+            center: SQT
+          });
+        // The marker, positioned at SQT
+        var marker = new google.maps.Marker({
+          position: SQT,
+          map: map,
+          title: 'Soqotri',
+          url: 'sqt.html'
+        });
+        marker.addListener('click', function () {
+          if (this.url) {
+            window.open(this.url, '_blank');
+          } else {
+            infowindow.open(map, this);
+          }
+        });
+        var marker = new google.maps.Marker({
+          position: BRI,
+          map: map,
+          title: 'Kpwe',
+          url: 'bri.html'
+        });
+        marker.addListener('click', function () {
+          if (this.url) {
+            window.open(this.url, '_blank');
+          } else {
+            infowindow.open(map, this);
+          }
+        });
+        var marker = new google.maps.Marker({
+          position: ZMT,
+          map: map,
+          title: 'Maringarr',
+          url: 'zmt.html'
+        });
+        marker.addListener('click', function () {
+          if (this.url) {
+            window.open(this.url, '_blank');
+          } else {
+            infowindow.open(map, this);
+          }
+        });
+        var marker = new google.maps.Marker({
+          position: ZMT,
+          map: map,
+          title: 'Maringarr',
+          url: 'zmt.html'
+        });
+        marker.addListener('click', function () {
+          if (this.url) {
+            window.open(this.url, '_blank');
+          } else {
+            infowindow.open(map, this);
+          }
+        });
+        var marker = new google.maps.Marker({
+          position: BUG,
+          map: map,
+          title: 'Bugis',
+          url: 'bug.html'
+        });
+        marker.addListener('click', function () {
+          if (this.url) {
+            window.open(this.url, '_blank');
+          } else {
+            infowindow.open(map, this);
+          }
+        });
+        var marker = new google.maps.Marker({
+          position: QUC,
+          map: map,
+          title: 'Kiche',
+          url: 'quc.html'
+        });
+        marker.addListener('click', function () {
+          if (this.url) {
+            window.open(this.url, '_blank');
+          } else {
+            infowindow.open(map, this);
+          }
+        });
+        var marker = new google.maps.Marker({
+          position: XTB,
+          map: map,
+          title: 'Tocharian',
+          url: 'xtb.html'
+        });
+        marker.addListener('click', function () {
+          if (this.url) {
+            window.open(this.url, '_blank');
+          } else {
+            infowindow.open(map, this);
+          }
+        });
+        var marker = new google.maps.Marker({
+          position: SSY,
+          map: map,
+          title: 'Saho',
+          url: 'ssy.html'
+        });
+        marker.addListener('click', function () {
+          if (this.url) {
+            window.open(this.url, '_blank');
+          } else {
+            infowindow.open(map, this);
+          }
+        });
       }
-  });
-  var marker = new google.maps.Marker({
-    position: ZMT,
-    map: map,
-    title: 'Maringarr',
-    url: 'zmt.html'
-  });
-  marker.addListener('click', function() {
-      if (this.url) {
-          window.open(this.url, '_blank');
-      } else {
-          infowindow.open(map, this);
-      }
-  });
-  var marker = new google.maps.Marker({
-    position: ZMT,
-    map: map,
-    title: 'Maringarr',
-    url: 'zmt.html'
-  });
-  marker.addListener('click', function() {
-      if (this.url) {
-          window.open(this.url, '_blank');
-      } else {
-          infowindow.open(map, this);
-      }
-  });
-  var marker = new google.maps.Marker({
-    position: BUG,
-    map: map,
-    title: 'Bugis',
-    url: 'bug.html'
-  });
-  marker.addListener('click', function() {
-      if (this.url) {
-          window.open(this.url, '_blank');
-      } else {
-          infowindow.open(map, this);
-      }
-  });
-  var marker = new google.maps.Marker({
-    position: QUC,
-    map: map,
-    title: 'Kiche',
-    url: 'quc.html'
-  });
-  marker.addListener('click', function() {
-      if (this.url) {
-          window.open(this.url, '_blank');
-      } else {
-          infowindow.open(map, this);
-      }
-  });
-  var marker = new google.maps.Marker({
-    position: XTB,
-    map: map,
-    title: 'Tocharian',
-    url: 'xtb.html'
-  });
-  marker.addListener('click', function() {
-      if (this.url) {
-          window.open(this.url, '_blank');
-      } else {
-          infowindow.open(map, this);
-      }
-  });
-  var marker = new google.maps.Marker({
-    position: SSY,
-    map: map,
-    title: 'Saho',
-    url: 'ssy.html'
-  });
-  marker.addListener('click', function() {
-      if (this.url) {
-          window.open(this.url, '_blank');
-      } else {
-          infowindow.open(map, this);
-      }
-  });
-}
+
     </script>
+
     <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
     -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9zoDtLON1kOd9axO7FrcQQ6z9buzKxlA&callback=initMap">
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9zoDtLON1kOd9axO7FrcQQ6z9buzKxlA&callback=initMap">
     </script>
-<i><p text align="right"><font size="3"><font face="times new roman">All images from Wikimedia Commons.</font></font></p></i>
-  </body>
+  </div>
+
+  <i>
+    <p style="text-align: center; font-size: 1em; font-family: Times New Roman, Times, serif;">All images from
+      Wikimedia Commons.</p>
+  </i>
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+
+  </script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
 </html>
