@@ -168,6 +168,12 @@ textarea {
   /* The width is the width of the web page */
 }
 
+.question{
+  text-align: center;
+  font-size: 4.5;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
