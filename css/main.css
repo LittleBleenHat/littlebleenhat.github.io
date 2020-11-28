@@ -168,15 +168,43 @@ textarea {
   /* The width is the width of the web page */
 }
 
-.text1{
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.subtitle{
+  text-align: left;
+  font-weight: bold;
+  font-size: 2em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.text-quoted {
+  text-align: center;
+  font-size: 1.20em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:SeaGreen;
+}
+
+.text-appetizer {
   text-align: center;
   font-weight: bold;
   font-size: 2em;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.text-main {
+  text-align: justify;
+  font-size: 1.20em;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-.text2{
+
+
+.text2 {
   text-align: center;
   font-weight: bold;
   font-size: 2.5em;
@@ -184,7 +212,7 @@ textarea {
 }
 
 
-.text3{
+.text3 {
   text-align: center;
   font-weight: bold;
   font-size: 3em;
